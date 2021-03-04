@@ -13,11 +13,11 @@ PROTO_OBJ =	$(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(PROTO_C))
 
 CPPFLAGS += -Inanopb -I$(PROJ_ROOT_DIR)
 
-DEPENDENCIES = $(PROTO_OBJ:.o=.d) $(CPP_OBJ:.o=.d)
--include $(DEPENDENCIES)
-
 .PHONY: all clean proto
 all: main
+
+DEPENDENCIES = $(PROTO_OBJ:.o=.d) $(CPP_OBJ:.o=.d)
+-include $(DEPENDENCIES)
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp $(PROTO_C) $(PROTO_H)
 	$(CXX) $(CPPFLAGS) -MMD -c $< -o $@
