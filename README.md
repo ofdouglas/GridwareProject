@@ -1,4 +1,4 @@
-# Gridware Protobuf Encoder / Decoder Project
+# Protobuf Encoder / Decoder Project
 
 Instructions (Linux)
 1. Build the project by running the `make` command (no arguments).
